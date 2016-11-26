@@ -7,9 +7,14 @@
 		  "size": 430
 		});
 
-		$(".eu13").find("a").each(function() {
-			$(this).click(function() {
-				console.log("France");
+		$(".eu13").find("span").each(function() {
+			console.log($(this));
+			$(this).find("span").each(function() {
+				console.log("2eme span "+$(this));
+				console.log($(this));
+				$(this).click(function() {
+					console.log("France");
+				});
 			});
 		});
 	});
