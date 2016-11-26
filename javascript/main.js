@@ -1,27 +1,17 @@
 (function() {
-
 	'use strict';
 
 	$(document).ready(function() {
-		var map = AmCharts.makeChart( "chartdiv", {
+		// CSSMap;
+		$("#map-europe").CSSMap({
+		  "size": 430
+		});
 
-		"type": "map",
-		"theme": "light",
-		"projection": "miller",
-
-		"dataProvider": {
-		"map": "worldLow",
-		"getAreasFromMap": true
-		},
-		"areasSettings": {
-		"autoZoom": true,
-		"selectedColor": "#CC0000"
-		},
-		"smallMap": {},
-		"export": {
-		"enabled": true,
-		"position": "bottom-right"
-		}
+		$(".eu13").find("a").each(function() {
+			$(this).click(function() {
+				console.log("France");
+			});
+		});
 	});
 
 })();
