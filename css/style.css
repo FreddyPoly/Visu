@@ -59,6 +59,7 @@ h2 {
 	width: 48%;
 	height: 98%;
 	top: 1%;
+	margin: 0;
 }
 
 #container_map {
@@ -68,6 +69,7 @@ h2 {
 }
 
 #container_data {
-	left: 51%;
+	overflow: hidden;
+	left: 2.5%;
 	border: 2px solid blue;
 }
