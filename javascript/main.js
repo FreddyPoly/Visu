@@ -1,98 +1,27 @@
-'use strict';
+(function() {
 
-var currentSection;
-var previousSection;
+	'use strict';
 
-$(document).ready(function() {
-      
-      currentSection = document.getElementsByClassName("active")[0].getAttribute('data-anchor');
-     // reset3();
-});
+	$(document).ready(function() {
+		var map = AmCharts.makeChart( "chartdiv", {
 
-function updateCurrentSection(){
+		"type": "map",
+		"theme": "light",
+		"projection": "miller",
 
-	var n = document.getElementsByClassName("active").length;
-	for(var i = 0; i < n; i++) {
- 		currentSection = document.getElementsByClassName("active")[i].getAttribute('data-anchor');
- 		if(currentSection != null) {
- 			break;
- 		}
-	}
-
-	// Actions effectuées lorsqu'on entre dans la section
-	switch(currentSection) {
-
-		case "firstPage" :
-			animIntro();
-		break;
-
-		case "secondPage" :
-			reset3();
-		break;
-
-		case "3rdPage" :
-		break;
-
-		case "4thPage" :
-
-		break;
-
-		case "5thPage" :
-			initI3();
-			hideConcl();
-		break;
-
-		case "6thPage" :
-			init3();
-			hideConcl();
-		break;
-
-		case "7thPage" :
-			reset3();
-			initConcl();
-			
-		break;
-
-		case "8thPage" :
-		break;
-	}
-
-	// Actions effectuées lorsqu'on quitte la section
-	if(previousSection) {
-		switch(previousSection) {
-
-			case "firstPage" :
-				resetIntro();
-			break;
-
-			case "secondPage" :
-			break;
-
-			case "3rdPage" :
-			break;
-
-			case "4thPage" :
-
-			break;
-
-			case "5thPage" :
-				stopAnims();
-			break;
-
-			case "6thPage" :
-				reset3();
-				
-			break;
-
-			case "7thPage" :
-				hideConcl();				
-			break;
-
-			case "8thPage" :
-			break;
-
+		"dataProvider": {
+		"map": "worldLow",
+		"getAreasFromMap": true
+		},
+		"areasSettings": {
+		"autoZoom": true,
+		"selectedColor": "#CC0000"
+		},
+		"smallMap": {},
+		"export": {
+		"enabled": true,
+		"position": "bottom-right"
 		}
-	}
+	});
 
-	previousSection = currentSection;
-}
+})();
