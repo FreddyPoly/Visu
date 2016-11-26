@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Notre page est en français -->
+  <head>
+    <!-- Il est obligatoire de préciser un encodage de caractères et un titre pour la page -->
+    <meta charset="utf-8">
+
+    <!-- set viewport correctly so that the page displays full width on mobiel devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temps de ménage en Europe</title>
+
+    <!-- animation css -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Déclaration de la feuille de style du document-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
+
+    <!-- Importation de la police Ubuntu -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <div id="container">
+
+      <section class="section section_perso" onclick="startQ()">
+        <h1 class="titre" id="titre_intro">
+          LES ÉNERGIES RENOUVELABLES EN PAYS DE LA LOIRE
+        </h1>
+        <h2 class="sous_titre_orange">
+          TOUT CE QUE VOUS DEVEZ SAVOIR
+        </h2>
+      </section>
+    </div>
+
+    <script type="text/javascript" src="../libraries/jquery/dist/jquery.js"></script>
+    <script src="../libraries/jquery.transit/jquery.transit.js"></script>
+    <script type="text/javascript" src="../libraries/fullpage/vendors/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="../libraries/fullpage/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('#container').fullpage({
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage', '8thPage'],
+
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        navigation: true,
+        navigationPosition: 'right',
+
+        css3:true,
+        loopHorizontal: false
+      });
+    });
+    </script>
+
+    <script src="../libraries/snap/snap.svg-min.js"></script>
+    <script src="../libraries/d3/d3.min.js"></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>
