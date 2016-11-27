@@ -48,13 +48,13 @@
 				console.log($(e).find("span"));
 				console.log(e.offsetLeft);
 				console.log($(e).position.left);
+
+				// Faire une fonction pour remettre la map à sa place
 			},
 			"pins": {
 			    "enable": true,
 			    "pinsId": "#demo-markers",
 			    "mapSize": 1450,
-			    "markerPosition": "middle",
-			    "tooltipPosition": "top",
 			    "tooltipOnClick": false,
 			    "clickableRegions": true
 			}
