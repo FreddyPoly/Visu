@@ -64,7 +64,7 @@ h2 {
 
 #map-europe {
 	position: relative;
-	top: -12%;
+	top: -6%;
 	left: -14%;
 }
 
@@ -76,8 +76,11 @@ h2 {
 }
 
 #bigger_map {
-	width: 150%;
-	height: 150%;
+	position: relative;
+	top: 0%;
+	left: 0%;
+	width: 135%;
+	height: 100%;
 }
 
 #container_data {
