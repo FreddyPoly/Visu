@@ -4,8 +4,8 @@
 	$(document).ready(function() {
 		// CSSMap;
 		$("#map-europe").CSSMap({
-			"size": 960,
-			"responsive": {},
+			"size": 1450,
+			"responsive": "auto",
 			onClick: function(e) {
 				var rLink = e.children("A").eq(0).attr("href"),
 				    rText = e.children("A").eq(0).text(),
@@ -22,7 +22,7 @@
 			"pins": {
 			    "enable": true,
 			    "pinsId": "#demo-markers",
-			    "mapSize": 960,
+			    "mapSize": 1450,
 			    "markerPosition": "middle",
 			    "tooltipPosition": "top",
 			    "tooltipOnClick": false,
