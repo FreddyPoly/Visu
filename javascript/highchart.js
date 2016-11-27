@@ -3,6 +3,10 @@ var lol = 1;
 
 $(function () {
 
+    function inverse(num){
+        return(num*-1);
+    }
+
     // Age categories
     var categories = ['Ménage' , 'Jardinage', 'Vaisselle' , 'passage de balais'];
     $(document).ready(function () {
@@ -64,7 +68,9 @@ $(function () {
             }]
         });
 
-    chart1.series[0].setData([-2.2, -2.2, -2.3, -5])
+    //chart1.series[0].setData([-2.2, -2.2, -2.3, -5]);
+    chart1.series[0].setData((data_chart['france'].male).map(inverse));
+    console.log(data_chart);
 
     });
 
