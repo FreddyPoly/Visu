@@ -16,6 +16,7 @@
 
         <!-- CSS de la carte d'Europe -->
         <link rel="stylesheet" type="text/css" href="resources/cssmap-europe/cssmap-europe/cssmap-europe.css" media="screen" />
+        <link rel="stylesheet" href="resources/amcharts/ammap.css" type="text/css" media="all" />
 
         <!-- Importation de la police Ubuntu -->
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -180,13 +181,35 @@
                         -->
                     </ul>
                 </div>
+
+                <!-- CSSMap MARKERS -->
+                <div id="demo-markers">
+                    <ul class="cssmap-pins">
+                        <li class="cssmap-pin" data-cssmap-coords="218,315">
+                            <div class="cssmap-tooltip-content">
+                                Phasellus quis est sed turpis sollicitudin venenatis. Praesent eget neque eu eros interdum.
+                            </div>
+                            <a href="#" id="belgium" class="cssmap-marker">
+                                <img src="resources/cssmap-europe/includes/pin.png" width="20" height="25" alt="pin"/>
+                            </a>
+                        </li>
+                        <li class="cssmap-pin" data-cssmap-coords="480,785">
+                            <div class="cssmap-tooltip-content">
+                                Proin quis tortor orci. Etiam at risus et justo dignissim congue.
+                            </div>
+                            <a href="#" id="bulgaria" class="cssmap-marker">
+                                <img src="resources/cssmap-europe/includes/pin.png" width="20" height="25" alt="pin"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <!-- PARTIE DONNEES -->
             <section class="container" id="container_data">
                 <h1>Data</h1>
-                <div>
-                    <p>Paragraphe de test</p>
+
+                <div id="mapdiv" style="width: 600px; height: 400px;">
                 </div>
             </section>
         </div>
@@ -198,5 +221,7 @@
 
         <!-- Europe map -->
         <script type="text/javascript" src="resources/cssmap-europe/jquery.cssmap.min.js"></script>
+        <script src="resources/amcharts/ammap.js" type="text/javascript"></script>
+        <script src="resources/amcharts/maps/js/europe.js" type="text/javascript"></script>
     </body>
 </html>
