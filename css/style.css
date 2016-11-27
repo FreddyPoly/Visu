@@ -62,7 +62,14 @@ h2 {
 	margin: 0;
 }
 
+#map-europe {
+	position: relative;
+	top: -16%;
+	left: -23%;
+}
+
 #container_map {
+	overflow: hidden;
 	float: left;
 	left: 1%;
 	border: 2px solid green;
