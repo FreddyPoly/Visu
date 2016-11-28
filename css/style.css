@@ -35,7 +35,6 @@ h2 {
 .titre {
 	font-weight: bold;
 	text-align: center;
-	position: absolute;
 	color: #002266;
 }
 
@@ -55,10 +54,9 @@ h2 {
 }
 
 .container {
+	top: 1%;
 	position: relative;
 	width: 48%;
-	height: 98%;
-	top: 1%;
 	margin: 0;
 }
 
@@ -69,6 +67,7 @@ h2 {
 }
 
 #container_map {
+	height: 98%;
 	overflow: hidden;
 	float: left;
 	left: 1%;
@@ -84,9 +83,17 @@ h2 {
 }
 
 #container_data {
+	height: 68%;
 	overflow: hidden;
 	left: 2.5%;
 	border: 2px solid blue;
+}
+
+#container_explanations {
+	height: 29%;
+	overflow: hidden;
+	left: 2.5%;
+	border: 2px solid yellow;
 }
 
 .cssmap-pin {
