@@ -29,14 +29,14 @@ $(function () {
     }
 
     // Age categories
-    var categories = ['Ménage' , 'Jardinage', 'Vaisselle' , 'passage de balais'];
+    var categories = ['Soins à la famille' , 'Gestion de la nourriture', 'Vaisselle' , 'Ménage', 'Entretien de l\'habitat', 'Lessive/Repassage', 'Jardinage', 'handicraft', 'Faire les Courses' ];
     $(document).ready(function () {
         window.chart1 = Highcharts.chart('container', {
             chart: {
                 type: 'bar'
             },
             title: {
-                text: 'Répartition H/F des tâches ménagères'
+                text: 'Répartition H/F des tâches domestiques'
             },
             subtitle: {
                 text: 'Source: <a href="http://masource.com">masource</a>'
@@ -87,21 +87,21 @@ $(function () {
 
             series: [{
                 name: 'Homme',
-                data: [-2,-2,-2,-2],
+                data: [-2,-2,-2,-2,-2,-2,-2,-2],
                 stack : 'country1'
             }, {
                 name: 'Femme',
-                data: [2,2,2,2],
+                data: [2,2,2,2,2,2,2,2],
                 stack : 'country1'
             },
             {
                 name: 'Homme',
-                data: [-2,-2,-2,-2],
+                data: [-2,-2,-2,-2,-2,-2,-2,-2],
                 stack : 'country2'
             },
             {
                 name: 'Femme',
-                data: [2,2,2,2],
+                data: [2,2,2,2,2,2,2,2],
                 stack : 'country2'
             }]
         });
