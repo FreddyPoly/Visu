@@ -65,23 +65,25 @@
 			},
 			onClick: function(e) {
 				var rText = e.children("A").eq(0).text();
-				console.log("Ajout "+rText.toLowerCase());
+				//console.log("Ajout "+rText);
 
 				// Ajout du pays dans le tableau des pays sélectionnés
-				maps_selected.push(rText.toLowerCase());
+				maps_selected.push(rText);
+				//console.log("Etat "+maps_selected);
 
 				// Mise à jour des données
 				update_data();
 			},
 			onSecondClick: function(e) {
 				var rText = e.children("A").eq(0).text();
-				console.log("Suppression "+rText.toLowerCase());
+				//console.log("Suppression "+rText);
 
 				// Suppression du pays dans le tableau
-				var index = maps_selected.indexOf(rText.toLowerCase());
+				var index = maps_selected.indexOf(rText);
 				if (index > -1) {
 				    maps_selected.splice(index, 1);
 				}
+				//console.log("Etat "+maps_selected);
 
 				// Mise à jour des données
 				update_data();
