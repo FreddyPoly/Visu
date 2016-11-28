@@ -1,24 +1,35 @@
 $(function () {
-    Highcharts.chart('france', {
+    Highcharts.chart('belgium_pie', {
         chart: {
+            margin: [0, 0, 0, 0],
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingLeft: 0,
+            spacingRight: 0,
             backgroundColor:'rgba(255, 255, 255, 0.0)',
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie'
         },
+        tooltip: {
+            enabled: false
+        },
         exporting: { enabled: false },
         title: {
             text: null
         },
+        credits: {
+            enabled: false
+        },
         plotOptions: {
             pie: {
-
-               showInLegend: false,
+                size:'100%',
+                showInLegend: false,
                 dataLabels: {
                     enabled: false
                 },
-                size: 100 
+                size: 50 
             }
         },
         series: [{
@@ -33,4 +44,6 @@ $(function () {
             }]
         }]
     });
+
+    $(window).trigger('resize');
 });
