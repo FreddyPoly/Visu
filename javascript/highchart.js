@@ -35,12 +35,7 @@ $(function () {
             chart: {
                 type: 'bar'
             },
-            title: {
-                text: 'Répartition H/F des tâches domestiques'
-            },
-            subtitle: {
-                text: 'Source: <a href="http://masource.com">masource</a>'
-            },
+        
             xAxis: [{
                 categories: categories,
                 reversed: false,
