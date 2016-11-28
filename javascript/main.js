@@ -1,6 +1,8 @@
 (function() {
 	'use strict';
 
+	var maps_selected = [];
+
 	// Réajuste la taille de la map au viewport actuel
 	function resize_map() {
 		// Réajustement de la taille de la map à chaque changement de résolution
@@ -24,6 +26,20 @@
 		//console.log("Width avec "+width+"px qui donne "+new_width);
 	}
 
+	// Met à jour la partie données de la dataviz
+	function update_data() {
+		// Si aucun pays n'est sélectionné ou que plus de 2 pays sont sélectionnés, on ne fait rien
+		if(maps_selected.length <= 0 || maps_selected.length > 2)
+			return;
+
+		// Si au moins 1 pays est sélectionné, on met à jour les données
+		if(maps_selected.length == 1)
+			setHighchart(maps_selected[0], null);
+
+		if(maps_selected.length == 2)
+			setHighchart(maps_selected[0], maps_selected[1]);
+	}
+
 	// A chaque changement de la taille du viewport on réajuste la taille de la map
 	$(window).resize(function() {
 		resize_map();
@@ -36,27 +52,41 @@
 		$("#map-europe").CSSMap({
 			"size": 1450,
 			"responsive": "auto",
-			onClick: function(e) {
-				var rLink = e.children("A").eq(0).attr("href"),
-				    rText = e.children("A").eq(0).text(),
-				    rClass = e.attr("class").split(" ")[0];
-
-				// Calcul 
-
-				console.log(rText);
-				console.log(e);
-				console.log($(e).find("span"));
-				console.log(e.offsetLeft);
-				console.log($(e).position.left);
-
-				// Faire une fonction pour remettre la map à sa place
-			},
 			"pins": {
 			    "enable": true,
 			    "pinsId": "#demo-markers",
 			    "mapSize": 1450,
 			    "tooltipOnClick": false,
 			    "clickableRegions": true
+			},
+			"multipleClick": {
+				enable: true,
+				clicksLimit: 2
+			},
+			onClick: function(e) {
+				var rText = e.children("A").eq(0).text();
+				//console.log("Ajout "+rText);
+
+				// Ajout du pays dans le tableau des pays sélectionnés
+				maps_selected.push(rText);
+				//console.log("Etat "+maps_selected);
+
+				// Mise à jour des données
+				update_data();
+			},
+			onSecondClick: function(e) {
+				var rText = e.children("A").eq(0).text();
+				//console.log("Suppression "+rText);
+
+				// Suppression du pays dans le tableau
+				var index = maps_selected.indexOf(rText);
+				if (index > -1) {
+				    maps_selected.splice(index, 1);
+				}
+				//console.log("Etat "+maps_selected);
+
+				// Mise à jour des données
+				update_data();
 			}
 		});
 	});
