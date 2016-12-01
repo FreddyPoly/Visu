@@ -73,25 +73,29 @@ Pie.prototype = {
                             }]
                         });
 
-        this.piechart.series[0].setData([75,25]);
     }
 
 };
 
 
 $(function () {
-    var pie3 = new Pie("estonia");
-    pie3.init();
+
     var pies = [];
     var pie;
-    /*for(var i = 0; i < Object.keys(data_chart).length; i++)
-    {
-        pie = new Pie(data_chart.)
-    }*/
+    var sum_male, sum_female;
+    var percent_male, percent_female;
 
     for(var key in data_chart)
     {
-        console.log(data_chart[key]);
+        pie = new Pie(data_chart[key].country_en);
+        pie.init();
+        sum_male = data_chart[key].male.reduce(function(pv, cv) { return pv + cv; }, 0);
+        sum_female = data_chart[key].female.reduce(function(pv, cv) { return pv + cv; }, 0);
+        percent_male = sum_male / (sum_male + sum_female);
+        percent_female = sum_female / (sum_male + sum_female);
+        pie.piechart.series[0].setData([percent_male,percent_female]);
+
+        pies.push(pie);
     }
 
     $(window).trigger('resize');
