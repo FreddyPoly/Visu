@@ -86,15 +86,15 @@ h2 {
 #container_explanations {
 	z-index: 500;
 	height: 80%;
-	overflow: hidden;
 	left: 26.5%;
 	top: 90%;
 	position: absolute;
 }
 
 #container_explanations > div {
+	position: relative;
+	top: -1%;
 	padding: 5%;
-	overflow: hidden;
 	background-color: #ccffff;
 	border-radius: 7px;
 	border: 2px solid black;

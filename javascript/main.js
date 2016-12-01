@@ -47,13 +47,13 @@
 
 	// Fonction d'animation du bouton d'explications
 	function animation_btn_explications() {
-		for(var i = 0; i < 0; i++) {
+		for(var i = 0; i < 5; i++) {
 			$("#container_explanations").transition({
 						top: '93%',
-						delay: 300 }, 1500, 'linear');
+						delay: 400 }, 1000, 'linear');
 			$("#container_explanations").transition({
 						top: '90%',
-						delay: 300 }, 1500, 'linear');
+						delay: 400 }, 1000, 'linear');
 		}
 	}
 
@@ -62,6 +62,9 @@
 
 		// Event bouton +
 		$("#btn_explications").click(function() {
+			// Arret de l'animation du bouton
+			$("#container_explanations").stop(true, true);
+
 			var clicks = $(this).data('clicks');
 			if (clicks) {
 				console.log("Pair");
