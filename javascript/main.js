@@ -64,15 +64,14 @@
 			$("#container_explanations").stop(true, true);
 			var clicks = $(this).data('clicks');
 			if (clicks) {
-				console.log("Pair");
 				$("#container_explanations").transition({
 					top: '90%',
-				});
+				}, 800, 'easeInBack');
+				animation_btn_explications();
 			} else {
-				console.log("Impair");
 				$("#container_explanations").transition({
 					top: '7%',
-				});
+				}, 1200, 'easeOutBack');
 			}
 			$(this).data("clicks", !clicks);
 		});
