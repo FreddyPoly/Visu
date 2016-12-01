@@ -93,7 +93,7 @@ $(function () {
         sum_female = data_chart[key].female.reduce(function(pv, cv) { return pv + cv; }, 0);
         percent_male = sum_male / (sum_male + sum_female);
         percent_female = sum_female / (sum_male + sum_female);
-        pie.piechart.series[0].setData([percent_male,percent_female]);
+        pie.piechart.series[0].setData([sum_male,sum_female]);
 
         pies.push(pie);
     }

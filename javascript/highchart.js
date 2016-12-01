@@ -35,7 +35,10 @@ $(function () {
             chart: {
                 type: 'bar'
             },
-        
+            exporting: { enabled: false },
+            title: {
+                text: null
+            },
             xAxis: [{
                 categories: categories,
                 reversed: false,
