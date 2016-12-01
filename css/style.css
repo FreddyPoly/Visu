@@ -107,10 +107,22 @@ h2 {
 	background-color: green;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
 .pie_data {
-	display: inline-block;
-	width:20%;
+
 	height: 100%;
-	margin : 0 14.5% 0 14.5%;
 	background-color: red;
+	border: 1px solid #dddddd;
+}
+
+#pie1 {
+	margin: auto;
+}
+
+.display_none {
+	display: none;
 }
