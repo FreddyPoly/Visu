@@ -45,8 +45,37 @@
 		resize_map();
 	});
 
+	// Fonction d'animation du bouton d'explications
+	function animation_btn_explications() {
+		for(var i = 0; i < 0; i++) {
+			$("#container_explanations").transition({
+						top: '93%',
+						delay: 300 }, 1500, 'linear');
+			$("#container_explanations").transition({
+						top: '90%',
+						delay: 300 }, 1500, 'linear');
+		}
+	}
+
 	$(document).ready(function() {
 		resize_map();
+
+		// Event bouton +
+		$("#btn_explications").click(function() {
+			var clicks = $(this).data('clicks');
+			if (clicks) {
+				console.log("Pair");
+				$("#container_explanations").transition({
+					top: '90%',
+				});
+			} else {
+				console.log("Impair");
+				$("#container_explanations").transition({
+					top: '30%',
+				});
+			}
+			$(this).data("clicks", !clicks);
+		});
 
 		// CSSMap;
 		$("#map-europe").CSSMap({
@@ -89,6 +118,8 @@
 				update_data();
 			}
 		});
+
+		animation_btn_explications();
 	});
 
 })();

@@ -49,6 +49,7 @@ h2 {
 }
 
 .container {
+	height: 98%;
 	top: 1%;
 	position: relative;
 	width: 48%;
@@ -62,7 +63,6 @@ h2 {
 }
 
 #container_map {
-	height: 98%;
 	overflow: hidden;
 	float: left;
 	left: 1%;
@@ -78,17 +78,35 @@ h2 {
 }
 
 #container_data {
-	height: 68%;
 	overflow: hidden;
 	left: 2.5%;
 	border: 2px solid blue;
 }
 
 #container_explanations {
-	height: 29%;
+	z-index: 500;
+	height: 80%;
 	overflow: hidden;
-	left: 2.5%;
-	border: 2px solid yellow;
+	left: 26.5%;
+	top: 90%;
+	position: absolute;
+}
+
+#container_explanations > div {
+	padding: 5%;
+	overflow: hidden;
+	background-color: #ccffff;
+	border-radius: 7px;
+	border: 2px solid black;
+}
+
+#btn_explications {
+	position: relative;
+	left: 43.5%;
+	top: 3%;
+	width: 11%;
+	height: auto;
+	cursor: pointer;
 }
 
 .cssmap-pin {
