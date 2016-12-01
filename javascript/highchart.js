@@ -29,7 +29,7 @@ $(function () {
     }
 
     // Age categories
-    var categories = ['Soins à la famille' , 'Gestion de la nourriture', 'Vaisselle' , 'Ménage', 'Entretien de l\'habitat', 'Lessive/Repassage', 'Jardinage', 'handicraft', 'Faire les Courses' ];
+    var categories = ['Soins à la famille' , 'Gestion de la nourriture', 'Vaisselle' , 'Ménage', 'Entretien de l\'habitat', 'Lessive/Repassage', 'Jardinage', 'Faire les Courses' ];
     $(document).ready(function () {
         window.chart1 = Highcharts.chart('container', {
             chart: {

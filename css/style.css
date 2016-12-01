@@ -94,3 +94,9 @@ h2 {
 .cssmap-pin {
 	list-style-type: none;
 }
+
+.css-pie {
+	width: 70px;
+	height : 70px;
+	margin: 0 auto;
+}
