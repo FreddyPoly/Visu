@@ -119,10 +119,15 @@ h2 {
 	margin: 0 auto;
 }
 
+.css-pie-data {
+	width: 200px;
+	height : 200px;
+	margin: 0 auto;
+}
+
 #container_pies {
 	width: 100%;
 	height: 25%;
-	background-color: green;
 }
 
 table {
@@ -133,8 +138,7 @@ table {
 .pie_data {
 
 	height: 100%;
-	background-color: red;
-	border: 1px solid #dddddd;
+
 }
 
 #pie1 {
