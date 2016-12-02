@@ -96,7 +96,7 @@ $(function () {
             plotOptions: {
                 series: {
                     stacking: 'normal',
-                    pointWidth: 15
+                    pointWidth: 20
                 }
             },
 
