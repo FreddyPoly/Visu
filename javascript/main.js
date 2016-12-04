@@ -1,3 +1,5 @@
+var trigger_clic_pays;
+
 (function() {
 	'use strict';
 
@@ -80,7 +82,7 @@
 	}
 
 	// Fonction simulant un clic sur un pays de la map
-	function trigger_click_on_map(pays) {
+	trigger_clic_pays = function trigger_click_on_map(pays) {
 		var code_eu;
 		switch(pays) {
 			case 'belgique':
