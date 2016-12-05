@@ -57,7 +57,7 @@ $(function () {
     }
 
     // Age categories
-    var categories = ['Soins à la famille' , 'Gestion de la nourriture', 'Vaisselle' , 'Ménage', 'Entretien de l\'habitat', 'Lessive/Repassage', 'Jardinage', 'Faire les Courses' ];
+    var categories = ['Gestion de la nourriture', 'Vaisselle' , 'Ménage', 'Entretien de l\'habitat', 'Lessive/Repassage', 'Jardinage', 'Faire les Courses' ];
     $(document).ready(function () {
         window.chart1 = Highcharts.chart('container', {
             chart: {
@@ -96,7 +96,7 @@ $(function () {
             plotOptions: {
                 series: {
                     stacking: 'normal',
-                    pointWidth: 20
+                    pointWidth: 17
                 }
             },
 
@@ -113,21 +113,21 @@ $(function () {
 
             series: [{
                 name: 'Homme',
-                data: [-2,-2,-2,-2,-2,-2,-2,-2],
+                data: [-2,-2,-2,-2,-2,-2,-2],
                 stack : 'country1'
             }, {
                 name: 'Femme',
-                data: [2,2,2,2,2,2,2,2],
+                data: [2,2,2,2,2,2,2],
                 stack : 'country1'
             },
             {
                 name: 'Homme',
-                data: [-2,-2,-2,-2,-2,-2,-2,-2],
+                data: [-2,-2,-2,-2,-2,-2,-2],
                 stack : 'country2'
             },
             {
                 name: 'Femme',
-                data: [2,2,2,2,2,2,2,2],
+                data: [2,2,2,2,2,2,2],
                 stack : 'country2'
             }]
         });
