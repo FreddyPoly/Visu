@@ -53,8 +53,16 @@ Pie.prototype = {
                                 series: {
                                     point: {
                                         events: {
-                                            click: function () {
-                                                alert('lililolilil');
+                                            click: function(e){
+                                                if(e.path[4].tagName == "DIV")
+                                                {
+                                                    console.log(e.path[4].offsetParent.id);
+                                                    trigger_clic_pays(e.path[4].offsetParent.id);    
+                                                }
+                                                else if(e.path[4].tagName == "svg"){
+                                                    console.log(e.path[5].offsetParent.id);
+                                                    trigger_clic_pays(e.path[5].offsetParent.id);   
+                                                }
                                             }
                                         }
                                     }
