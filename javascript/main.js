@@ -85,15 +85,15 @@ var trigger_clic_pays;
 	trigger_clic_pays = function trigger_click_on_map(pays) {
 		var code_eu;
 		switch(pays) {
-			case 'belgique':
+			case 'belgium':
 				code_eu = "eu5";
 				break;
 
-			case 'bulgarie':
+			case 'bulgaria':
 				code_eu = "eu7";
 				break;
 				
-			case 'estonie':
+			case 'estonia':
 				code_eu = "eu12";
 				break;
 				
@@ -101,43 +101,43 @@ var trigger_clic_pays;
 				code_eu = "eu13";
 				break;
 				
-			case 'finlande':
+			case 'finland':
 				code_eu = "eu14";
 				break;
 				
-			case 'allemagne':
+			case 'germany':
 				code_eu = "eu16";
 				break;
 				
-			case 'italie':
+			case 'italy':
 				code_eu = "eu22";
 				break;
 				
-			case 'lettonie':
+			case 'latvia':
 				code_eu = "eu24";
 				break;
 				
-			case 'lithuanie':
+			case 'lithuania':
 				code_eu = "eu26";
 				break;
 				
-			case 'norvege':
+			case 'norway':
 				code_eu = "eu34";
 				break;
 				
-			case 'pologne':
+			case 'poland':
 				code_eu = "eu35";
 				break;
 				
-			case 'slovenie':
+			case 'slovenia':
 				code_eu = "eu41";
 				break;
 				
-			case 'espagne':
+			case 'spain':
 				code_eu = "eu42";
 				break;
 				
-			case 'royaume-uni':
+			case 'united-kingdom':
 				code_eu = "eu47";
 				break;
 
