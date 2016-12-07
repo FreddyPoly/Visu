@@ -71,13 +71,9 @@ Pie.prototype = {
                                                     console.log(e.path[5].offsetParent.id);
                                                     trigger_clic_pays(e.path[5].offsetParent.id);   
                                                 }
-                                            },
-                                            mouseOver: function() {
-                                                /*console.log(this.series);
-                                                this.group.toFront();*/
                                             }
                                         }
-                                    },
+                                    }
                                 }
                             },
                             series: [{
@@ -107,7 +103,7 @@ $(function () {
         for(var i = 0; i < pies.length; i++)
         {
             //console.log(pies[i].country);
-            if(pies[i].country == country) { // change color
+            if(country != null && pies[i].country == data_chart[country].country_en) { // change color
                 pies[i].piechart.series[0].options.data[0].color = Highcharts.getOptions().colors[2];
                 pies[i].piechart.series[0].options.data[1].color = Highcharts.getOptions().colors[3];
                 pies[i].piechart.series[0].update(pies[i].piechart.series[0].options.data[0]);
@@ -141,10 +137,8 @@ $(function () {
 
         pies.push(pie);
     }
-
-    console.log(pies[0].piechart.series[0].options.data[0]);
     
-    changeColorPie("france");
+        changeColorPie(null);
 
     $(window).trigger('resize');
 });
