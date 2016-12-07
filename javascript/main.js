@@ -190,6 +190,8 @@ var trigger_clic_pays;
 				// Verif si 2 pays sélectionnés
 				if(maps_selected.length > 1)
 					changeColorPie(maps_selected[1]);
+				else
+					changeColorPie("Mexico");
 
 				// Mise à jour des données
 				update_data();
@@ -201,6 +203,7 @@ var trigger_clic_pays;
 				var index = maps_selected.indexOf(rText);
 				if (index > -1) {
 				    maps_selected.splice(index, 1);
+					changeColorPie("Mexico");
 				}
 
 				// Mise à jour des données
