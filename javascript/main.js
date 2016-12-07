@@ -188,7 +188,7 @@ var trigger_clic_pays;
 				maps_selected.push(rText);
 
 				// Verif si 2 pays sélectionnés
-				if(maps_selected.size() > 1)
+				if(maps_selected.length > 1)
 					changeColorPie(maps_selected[1]);
 
 				// Mise à jour des données
