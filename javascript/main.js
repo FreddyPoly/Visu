@@ -187,6 +187,10 @@ var trigger_clic_pays;
 				// Ajout du pays dans le tableau des pays sélectionnés
 				maps_selected.push(rText);
 
+				// Verif si 2 pays sélectionnés
+				if(maps_selected.size() > 1)
+					changeColorPie(maps_selected[1]);
+
 				// Mise à jour des données
 				update_data();
 			},
