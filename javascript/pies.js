@@ -1,3 +1,5 @@
+var changeColorPie;
+
 var Pie = function(country) {
     this.country = country;
     this.piechart = null;
@@ -51,6 +53,12 @@ Pie.prototype = {
                                     },
                                 },
                                 series: {
+                                    events: {
+                                        mouseOver: function() {
+                                                /*console.log(this.group);
+                                                this.markerGroup.toFront();*/
+                                            }
+                                    },
                                     point: {
                                         events: {
                                             click: function(e){
@@ -63,9 +71,13 @@ Pie.prototype = {
                                                     console.log(e.path[5].offsetParent.id);
                                                     trigger_clic_pays(e.path[5].offsetParent.id);   
                                                 }
+                                            },
+                                            mouseOver: function() {
+                                                /*console.log(this.series);
+                                                this.group.toFront();*/
                                             }
                                         }
-                                    }
+                                    },
                                 }
                             },
                             series: [{
@@ -73,10 +85,12 @@ Pie.prototype = {
                                 colorByPoint: true,
                                 data: [{
                                     name: 'H',
-                                    y: 50
+                                    y: 50,
+                                    color: Highcharts.getOptions().colors[0]
                                 }, {
                                     name: 'F',
                                     y: 50,
+                                    color: Highcharts.getOptions().colors[1]
                                 }]
                             }]
                         });
@@ -85,10 +99,32 @@ Pie.prototype = {
 
 };
 
+var pies = [];
 
 $(function () {
 
-    var pies = [];
+    changeColorPie = function(country) {
+        for(var i = 0; i < pies.length; i++)
+        {
+            //console.log(pies[i].country);
+            if(pies[i].country == country) { // change color
+                pies[i].piechart.series[0].options.data[0].color = Highcharts.getOptions().colors[2];
+                pies[i].piechart.series[0].options.data[1].color = Highcharts.getOptions().colors[3];
+                pies[i].piechart.series[0].update(pies[i].piechart.series[0].options.data[0]);
+                pies[i].piechart.series[0].update(pies[i].piechart.series[0].options.data[1]);  
+            }
+            else { // reset color
+                if((pies[i].piechart.series[0].options.data[0].color != Highcharts.getOptions().colors[0]) && (pies[i].piechart.series[0].options.data[1].color != Highcharts.getOptions().colors[1])) {
+                    pies[i].piechart.series[0].options.data[0].color = Highcharts.getOptions().colors[0];
+                    pies[i].piechart.series[0].options.data[1].color = Highcharts.getOptions().colors[1];
+                    pies[i].piechart.series[0].update(pies[i].piechart.series[0].options.data[0]);
+                    pies[i].piechart.series[0].update(pies[i].piechart.series[0].options.data[1]);
+                }
+            }
+        }
+    }
+
+    
     var pie;
     var sum_male, sum_female;
     var percent_male, percent_female;
@@ -105,6 +141,10 @@ $(function () {
 
         pies.push(pie);
     }
+
+    console.log(pies[0].piechart.series[0].options.data[0]);
+    
+    changeColorPie("france");
 
     $(window).trigger('resize');
 });
